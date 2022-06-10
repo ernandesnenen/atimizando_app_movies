@@ -15,6 +15,7 @@ interface SideBarProps {
 export function SideBar() {
 
   const {genres, selectedGenreId, handleClickButton} = useContext(MovieContext)
+  
   return (
     <nav className="sidebar">
       <span>Watch<p>Me</p></span>
