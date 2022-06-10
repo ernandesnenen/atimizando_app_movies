@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import { MovieContext } from "../context/movieContext";
 import { Button } from "./Button";
 
 interface SideBarProps {
@@ -10,11 +12,9 @@ interface SideBarProps {
   buttonClickCallback: (args: any) => void;
 }
 
-export function SideBar({
-  genres,
-  selectedGenreId,
-  buttonClickCallback
-}: SideBarProps) {
+export function SideBar() {
+
+  const {genres, selectedGenreId, handleClickButton} = useContext(MovieContext)
   return (
     <nav className="sidebar">
       <span>Watch<p>Me</p></span>
@@ -25,7 +25,7 @@ export function SideBar({
             key={String(genre.id)}
             title={genre.title}
             iconName={genre.name}
-            onClick={() => buttonClickCallback(genre.id)}
+            onClick={() => handleClickButton(genre.id)}
             selected={selectedGenreId === genre.id}
           />
         ))}
