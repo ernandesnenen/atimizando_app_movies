@@ -1,4 +1,4 @@
-import React from "react";
+
 import { memo } from 'react'
 
 interface IconProps {
@@ -53,5 +53,5 @@ function IconComponent(props: IconProps) {
 }
 
 export const Icon = memo(IconComponent,(prevProps, nextProps)=>{
-  return prevProps.name === nextProps.name
+  return prevProps.color === nextProps.color
 })
